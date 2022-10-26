@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "801540359218",
+    "project_id": "rn-rnapp",
+    "storage_bucket": "rn-rnapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801540359218:android:61401ff4ca293cd0dc282b",
+        "android_client_info": {
+          "package_name": "com.startapplogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801540359218-1oq1dqqgbng1e8sdodggp24gh49i14v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEfCoEg06gMwIa4_1KPQNnXpxIe7xI8KQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801540359218-1oq1dqqgbng1e8sdodggp24gh49i14v7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
