@@ -1,9 +1,10 @@
-import {put, call, CallEffect} from 'redux-saga/effects';
+import {put, call} from 'redux-saga/effects';
 import {navigate} from '../../../routes/navigation/navigate';
+import {signInWithEmailPassoword} from '../../../services/Firebase/auth/signInWithEmailPassword';
 import {createAccountWithEmailPassword} from './../../../services/Firebase/auth/createAccountWithEmailPassword';
 import {authActions} from './actions';
 
-type authRegisterAction = {
+type authAction = {
   type: string;
   payload: {
     email: string;
@@ -11,62 +12,70 @@ type authRegisterAction = {
   };
 };
 
-export function* authRegister(action: authRegisterAction) {
+export function* authRegister(action: authAction) {
   navigate('Loading');
 
   yield put(authActions.attProgressLoading(5));
 
-  yield put(authActions.attProgressLoading(15));
+  yield call(timeOutTwoSecond);
+
+  yield put(authActions.attProgressLoading(25));
+
+  yield call(timeOutTwoSecond);
 
   const email = action.payload.email;
   const password = action.payload.password;
 
   yield put(authActions.attProgressLoading(55));
 
+  yield call(timeOutTwoSecond);
+
   yield put(authActions.attProgressLoading(85));
 
   try {
-    const userInfo: {
-      userCreated: {email: string; uid: string};
-      errorOnCreated: string;
-    } = yield call(createAccountWithEmailPassword, email, password);
+    yield put(authActions.attProgressLoading(97));
 
-    
+    yield call(createAccountWithEmailPassword, email, password);
+
+    yield put(authActions.attProgressLoading(100));
   } catch (err) {
     console.log(err, 'sou um erro');
+  }
+}
+
+export function* authLogin(action: authAction) {
+  navigate('Loading');
+
+  yield put(authActions.attProgressLoading(5));
+
+  const userInfo = {
+    email: action.payload.email,
+    password: action.payload.password,
+  };
+
+  yield call(timeOutTwoSecond);
+
+  yield put(authActions.attProgressLoading(63));
+
+  yield call(timeOutTwoSecond);
+
+  yield put(authActions.attProgressLoading(97));
+
+  try {
+    yield call(signInWithEmailPassoword, userInfo.email, userInfo.password);
+  } catch (err) {
+    console.log(err);
   }
 
   yield put(authActions.attProgressLoading(100));
 }
 
-export function* authLogin() {
-  console.log('cheguei aqui');
-}
-
 export function* authLogout() {}
 
-// function newValueGet(value: number) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(value);
-//     }, 2000);
-//   });
-// }
-
-// export function* goLoading() {
-//   console.log('entrei');
-//   let myNumber: number = 0;
-//   yield put(authActions.attProgressLoading(5));
-
-//   myNumber = yield call(newValueGet, 25);
-
-//   yield put(authActions.attProgressLoading(myNumber));
-
-//   myNumber = yield call(newValueGet, 75);
-
-//   yield put(authActions.attProgressLoading(myNumber));
-
-//   myNumber = yield call(newValueGet, 100);
-
-//   yield put(authActions.attProgressLoading(myNumber));
-// }
+function timeOutTwoSecond() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(12);
+    }, 2000);
+  });
+}

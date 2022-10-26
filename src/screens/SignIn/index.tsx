@@ -9,6 +9,8 @@ import {schemaSignIn} from '../../schemas/signin';
 import {Button} from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
 import {signInWithEmailPassoword} from '../../services/Firebase/auth/signInWithEmailPassword';
+import {useDispatch} from 'react-redux';
+import {authActions} from '../../store/modules/auth/actions';
 
 const initialValue: ValuesSignIn = {
   email: '',
@@ -17,11 +19,18 @@ const initialValue: ValuesSignIn = {
 
 export const SignIn: React.FC = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const handleSubmitForm = async (values: ValuesSignIn) => {
-    const signInInfo = await signInWithEmailPassoword(
-      values.email,
-      values.password,
-    );
+    try {
+      dispatch(
+        authActions.signIn({
+          email: values.email,
+          password: values.password,
+        }),
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleGoSignUp = () => {
@@ -62,7 +71,7 @@ export const SignIn: React.FC = () => {
               />
             </S.BoxInput>
             <S.BoxBtnLogin>
-              <Button title="Login" />
+              <Button title="Login" onPress={handleSubmit} />
             </S.BoxBtnLogin>
             <S.LineSpace />
             <S.BoxBtnLogin>

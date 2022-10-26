@@ -1,13 +1,19 @@
 import {number} from 'yup';
 import {authTypes} from './types';
 
-const initialValue = {
+type InitialValueProps = {
+  loading: boolean;
+  progressLoading: number;
+  user: {
+    uid: string;
+    email: string;
+  } | null;
+};
+
+const initialValue: InitialValueProps = {
   loading: false,
   progressLoading: 0,
-  user: {
-    uid: '',
-    email: '',
-  },
+  user: null,
 };
 
 const authReducer = (state = initialValue, action: any) => {
@@ -15,10 +21,7 @@ const authReducer = (state = initialValue, action: any) => {
     case authTypes.AUTH_SETUSER:
       return (state = {
         ...state,
-        user: {
-          email: action.payload.email,
-          uid: action.payload.uid,
-        },
+        user: action.payload,
       });
 
     case authTypes.AUTH_APPLY_LOADING:

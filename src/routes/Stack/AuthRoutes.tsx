@@ -1,5 +1,5 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import { Loading } from '../../screens/Loading';
+import {Loading} from '../../screens/Loading';
 import {Onboarding} from '../../screens/Onboarding';
 import {SignIn} from '../../screens/SignIn';
 import {SignUp} from '../../screens/SignUp';

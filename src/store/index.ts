@@ -7,10 +7,12 @@ import rootSaga from './modules/rootSaga';
 
 export type ApplicationState = {
   authReducer: {
+    loading: boolean;
+    progressLoading: number;
     user: {
       email: string;
       uid: string;
-    };
+    } | null;
   };
 };
 
