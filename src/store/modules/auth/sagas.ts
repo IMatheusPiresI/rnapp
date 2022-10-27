@@ -1,5 +1,5 @@
 import {put, call} from 'redux-saga/effects';
-import {navigate} from '../../../utils/navigation';
+import {navigate} from '../../../routes/navigation';
 import {signInWithEmailPassoword} from '../../../services/Firebase/auth/signInWithEmailPassword';
 import {createAccountWithEmailPassword} from './../../../services/Firebase/auth/createAccountWithEmailPassword';
 import {authActions} from './actions';

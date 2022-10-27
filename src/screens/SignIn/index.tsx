@@ -10,6 +10,7 @@ import {Button} from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import {authActions} from '../../store/modules/auth/actions';
+import {showToast} from '../../utils/toastMessage';
 
 const initialValue: ValuesSignIn = {
   email: '',
@@ -28,7 +29,10 @@ export const SignIn: React.FC = () => {
         }),
       );
     } catch (err) {
-      console.log(err);
+      showToast.error({
+        text1: 'Error submit form',
+        text2: 'An unexpected error occurred, please try again.',
+      });
     }
   };
 

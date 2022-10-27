@@ -15,6 +15,7 @@ import {createAccountWithEmailPassword} from '../../services/Firebase/auth/creat
 
 import {useDispatch} from 'react-redux';
 import {authActions} from '../../store/modules/auth/actions';
+import {showToast} from '../../utils/toastMessage';
 
 const initialValue: ValuesSignUp = {
   fullName: '',
@@ -36,7 +37,10 @@ export const SignUp: React.FC = () => {
         }),
       );
     } catch (err) {
-      console.log(err);
+      showToast.error({
+        text1: 'Error submit form',
+        text2: 'An unexpected error occurred, please try again.',
+      });
     }
   };
 

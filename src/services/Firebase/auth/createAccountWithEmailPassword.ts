@@ -1,6 +1,6 @@
 import auth from '@react-native-firebase/auth';
 import {authActions} from '../../../store/modules/auth/actions';
-import {navigate} from '../../../utils/navigation';
+import {navigate} from '../../../routes/navigation';
 import {showToast} from '../../../utils/toastMessage';
 
 export const createAccountWithEmailPassword = async (
@@ -10,7 +10,6 @@ export const createAccountWithEmailPassword = async (
   await auth()
     .createUserWithEmailAndPassword(email, password)
     .then(({user}) => {
-      console.log('entrei');
       authActions.setUser({
         email: user.email!,
         uid: user.uid,
@@ -21,7 +20,6 @@ export const createAccountWithEmailPassword = async (
           text2: 'Welcome to RNApp, enjoy the experience',
         });
       }, 2000);
-      console.log('entrei');
     })
     .catch(error => {
       let errorOnCreated: string;

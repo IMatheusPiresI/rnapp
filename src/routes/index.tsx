@@ -8,7 +8,7 @@ import {AuthRoutes} from './Stack/AuthRoutes';
 import {authActions} from '../store/modules/auth/actions';
 import {useDispatch} from 'react-redux';
 import useAppSelector from '../hooks/useAppSelector';
-import {navigationRef} from '../utils/navigation';
+import {navigationRef} from './navigation';
 
 export const AppRoutes = () => {
   const [initializing, setInitializing] = useState(true);
@@ -36,8 +36,6 @@ export const AppRoutes = () => {
   }, []);
 
   if (initializing) return null;
-
-  console.log(user);
 
   const renderRoutes = () => {
     if (user) {

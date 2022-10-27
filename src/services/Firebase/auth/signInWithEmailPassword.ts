@@ -1,6 +1,6 @@
 import {showToast} from './../../../utils/toastMessage/index';
 import auth from '@react-native-firebase/auth';
-import {navigate} from '../../../utils/navigation';
+import {navigate} from '../../../routes/navigation';
 
 interface UserSingIn {
   email: string;
