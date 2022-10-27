@@ -37,6 +37,8 @@ export const BoxIcon = styled.View`
   right: 15px;
 `;
 
+export const ButtonIcon = styled.TouchableOpacity``;
+
 export const ErrorMessage = styled(Animated.Text)`
   color: ${({theme}) => theme.colors.error};
   font-family: ${({theme}) => theme.fonts.primaryMedium};

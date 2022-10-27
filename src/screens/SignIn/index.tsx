@@ -69,8 +69,8 @@ export const SignIn: React.FC = () => {
                 label={'Password'}
                 onChangeText={handleChange('password')}
                 nameIcon={'lock-outline'}
-                secureTextEntry={true}
                 errors={errors['password']}
+                secret
               />
             </S.BoxInput>
             <S.BoxBtnLogin>

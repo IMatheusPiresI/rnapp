@@ -95,8 +95,8 @@ export const SignUp: React.FC = () => {
                   label={'Password'}
                   onChangeText={handleChange('password')}
                   nameIcon={'lock-outline'}
-                  secureTextEntry={true}
                   errors={errors['password']}
+                  secret
                 />
               </S.BoxInput>
               <S.BoxInput>
@@ -105,8 +105,8 @@ export const SignUp: React.FC = () => {
                   label={'Confirm Password'}
                   onChangeText={handleChange('confirmPassword')}
                   nameIcon={'lock-outline'}
-                  secureTextEntry={true}
                   errors={errors['confirmPassword']}
+                  secret
                 />
               </S.BoxInput>
               <S.BoxBtnSingUp>

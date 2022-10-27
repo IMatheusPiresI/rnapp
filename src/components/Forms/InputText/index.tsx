@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import * as S from './styles';
 import {TextInput, TextInputProps} from 'react-native';
 import {
@@ -15,17 +15,18 @@ interface InputTextProps extends TextInputProps {
   label: string;
   errors?: string;
   nameIcon?: string;
-  masked?: boolean;
+  secret?: boolean;
 }
 
 export const InputText: React.FC<InputTextProps> = ({
   label,
-  masked = false,
   value,
   nameIcon,
   errors,
+  secret = false,
   ...rest
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
   const inputTextRef = useRef<TextInput>(null);
   const labelAnimate = useSharedValue(0);
   const theme = useTheme();
@@ -44,6 +45,10 @@ export const InputText: React.FC<InputTextProps> = ({
 
   const handleClickLabelFocus = () => {
     inputTextRef.current?.focus();
+  };
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
   };
 
   const rLabelStyle = useAnimatedStyle(() => {
@@ -65,6 +70,7 @@ export const InputText: React.FC<InputTextProps> = ({
           onBlur={handleBlur}
           value={value}
           autoCorrect={false}
+          secureTextEntry={secret && !showPassword}
           {...rest}
         />
 
@@ -73,11 +79,21 @@ export const InputText: React.FC<InputTextProps> = ({
         </S.LabelText>
         {nameIcon && (
           <S.BoxIcon>
-            <MaterialIcons
-              name={nameIcon}
-              size={23}
-              color={theme.colors.backgroundDark}
-            />
+            {secret ? (
+              <S.ButtonIcon onPress={handleShowPassword}>
+                <MaterialIcons
+                  name={showPassword ? 'lock-open' : nameIcon}
+                  size={23}
+                  color={theme.colors.backgroundDark}
+                />
+              </S.ButtonIcon>
+            ) : (
+              <MaterialIcons
+                name={nameIcon}
+                size={23}
+                color={theme.colors.backgroundDark}
+              />
+            )}
           </S.BoxIcon>
         )}
       </S.BoxInput>
