@@ -9,9 +9,10 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 32px;
+  font-size: 28px;
   font-family: ${({theme}) => theme.fonts.primaryBold};
   color: ${({theme}) => theme.colors.backgroundDark};
+  text-align: center;
 `;
 
 export const Button = styled.TouchableOpacity`
