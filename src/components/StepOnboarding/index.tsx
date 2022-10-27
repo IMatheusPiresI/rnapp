@@ -1,6 +1,7 @@
 import React from 'react';
-import {StepInfo} from '../../@types/mocks/StepOnboarding';
 import * as S from './styles';
+
+import {StepInfo} from '../../@types/mocks/StepOnboarding';
 
 interface StepOnboardingProps {
   page: StepInfo;

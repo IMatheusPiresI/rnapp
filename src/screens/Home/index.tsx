@@ -9,21 +9,11 @@ export const Home: React.FC = () => {
     await logout();
   };
 
-  const handleShowToast = () => {
-    showToast.success({
-      text1: 'asdsadsa',
-      text2: 'adasdsadasdassadasdasdsadsadsadsadasdsaddasdsadsadsadsad',
-    });
-  };
-
   return (
     <S.Container>
       <S.Title>Hello World!!</S.Title>
       <S.Button onPress={handleLogout}>
         <S.ButtonTitle>Logout</S.ButtonTitle>
-      </S.Button>
-      <S.Button onPress={handleShowToast}>
-        <S.ButtonTitle>toast</S.ButtonTitle>
       </S.Button>
     </S.Container>
   );

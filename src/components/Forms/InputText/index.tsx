@@ -9,8 +9,6 @@ import {
 } from 'react-native-reanimated';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from 'styled-components';
-import {FormikErrors} from 'formik';
-import {ValuesSignIn} from '../../../@types/components/Forms/sign';
 
 interface InputTextProps extends TextInputProps {
   value: string;

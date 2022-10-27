@@ -1,8 +1,9 @@
 import React from 'react';
+import * as S from './styles';
+
 import Animated from 'react-native-reanimated';
 import {page} from '../../mocks/Onboarding';
 import {Dot} from '../Dot';
-import * as S from './styles';
 
 interface PaginatorProps {
   activeDot: Animated.SharedValue<number>;

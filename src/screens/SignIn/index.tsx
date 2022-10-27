@@ -8,7 +8,6 @@ import {ValuesSignIn} from '../../@types/components/Forms/sign';
 import {schemaSignIn} from '../../schemas/signin';
 import {Button} from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
-import {signInWithEmailPassoword} from '../../services/Firebase/auth/signInWithEmailPassword';
 import {useDispatch} from 'react-redux';
 import {authActions} from '../../store/modules/auth/actions';
 
