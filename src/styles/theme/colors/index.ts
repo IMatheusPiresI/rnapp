@@ -8,4 +8,5 @@ export default {
   background: '#AEEEEE',
   backgroundDark: '#00C5CD',
   error: '#FF3030',
+  success: '#7FFF00',
 };

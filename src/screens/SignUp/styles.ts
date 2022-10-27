@@ -14,7 +14,6 @@ export const Container = styled.ScrollView.attrs({
 export const Header = styled.View`
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
 `;
 
 export const GoBackButton = styled.TouchableOpacity`
@@ -28,7 +27,7 @@ export const GoBackButton = styled.TouchableOpacity`
 
 export const WrapperForm = styled.View`
   flex: 1;
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 50px;
 `;
 
@@ -41,7 +40,7 @@ export const FormTitle = styled.Text`
 `;
 
 export const BoxInput = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 `;
 
 export const BoxBtnSingUp = styled.View``;

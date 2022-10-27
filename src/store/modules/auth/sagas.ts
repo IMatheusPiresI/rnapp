@@ -1,5 +1,5 @@
 import {put, call} from 'redux-saga/effects';
-import {navigate} from '../../../routes/navigation/navigate';
+import {navigate} from '../../../utils/navigation';
 import {signInWithEmailPassoword} from '../../../services/Firebase/auth/signInWithEmailPassword';
 import {createAccountWithEmailPassword} from './../../../services/Firebase/auth/createAccountWithEmailPassword';
 import {authActions} from './actions';
@@ -32,15 +32,10 @@ export function* authRegister(action: authAction) {
 
   yield put(authActions.attProgressLoading(85));
 
-  try {
-    yield put(authActions.attProgressLoading(97));
+  yield put(authActions.attProgressLoading(97));
 
-    yield call(createAccountWithEmailPassword, email, password);
-
-    yield put(authActions.attProgressLoading(100));
-  } catch (err) {
-    console.log(err, 'sou um erro');
-  }
+  yield call(createAccountWithEmailPassword, email, password);
+  yield put(authActions.attProgressLoading(100));
 }
 
 export function* authLogin(action: authAction) {
@@ -61,11 +56,7 @@ export function* authLogin(action: authAction) {
 
   yield put(authActions.attProgressLoading(97));
 
-  try {
-    yield call(signInWithEmailPassoword, userInfo.email, userInfo.password);
-  } catch (err) {
-    console.log(err);
-  }
+  yield call(signInWithEmailPassoword, userInfo.email, userInfo.password);
 
   yield put(authActions.attProgressLoading(100));
 }

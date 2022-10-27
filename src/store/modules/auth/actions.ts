@@ -26,14 +26,18 @@ const signUp = (payload: AuthActionPayload) => {
 const setUser = (payload: User | null) => {
   return {
     type: authTypes.AUTH_SETUSER,
-    payload,
+    payload: {
+      user: payload,
+    },
   };
 };
 
 const attProgressLoading = (payload: number) => {
   return {
     type: authTypes.AUTH_ATT_PROGRESS_LOADING,
-    payload,
+    payload: {
+      progressLoading: payload,
+    },
   };
 };
 

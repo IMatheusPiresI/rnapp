@@ -44,6 +44,10 @@ export const InputText: React.FC<InputTextProps> = ({
     });
   };
 
+  const handleClickLabelFocus = () => {
+    inputTextRef.current?.focus();
+  };
+
   const rLabelStyle = useAnimatedStyle(() => {
     return {
       transform: [
@@ -66,7 +70,9 @@ export const InputText: React.FC<InputTextProps> = ({
           {...rest}
         />
 
-        <S.LabelText style={rLabelStyle}>{label}</S.LabelText>
+        <S.LabelText style={rLabelStyle} onPress={handleClickLabelFocus}>
+          {label}
+        </S.LabelText>
         {nameIcon && (
           <S.BoxIcon>
             <MaterialIcons

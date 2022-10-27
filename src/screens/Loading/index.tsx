@@ -1,26 +1,16 @@
 import React, {useEffect} from 'react';
 import * as S from './styles';
 
-import {useRoute} from '@react-navigation/native';
 import {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
 import useAppSelector from '../../hooks/useAppSelector';
-import {useDispatch, useSelector} from 'react-redux';
-import {authActions} from '../../store/modules/auth/actions';
-
-type ParamsProps = {
-  title: string;
-};
 
 export const Loading: React.FC = () => {
   const progressAnimation = useSharedValue(0);
-  const progress = useSelector(
-    (state: any) => state.authReducer.progressLoading,
-  );
-  const dispatch = useDispatch();
+  const progress = useAppSelector(state => state.authReducer.progressLoading);
 
   const rProgressStyle = useAnimatedStyle(() => {
     return {

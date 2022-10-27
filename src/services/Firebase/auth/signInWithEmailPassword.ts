@@ -1,4 +1,6 @@
+import {showToast} from './../../../utils/toastMessage/index';
 import auth from '@react-native-firebase/auth';
+import {navigate} from '../../../utils/navigation';
 
 interface UserSingIn {
   email: string;
@@ -13,28 +15,25 @@ export const signInWithEmailPassoword = async (
   let errorSignIn: string = '';
   await auth()
     .signInWithEmailAndPassword(email, password)
-    .then(({user}) => {
-      console.log(user);
-
-      userSignIn = {
-        email: user.email!,
-        uid: user.uid,
-      };
-    })
     .catch(error => {
       switch (error.code) {
         case 'auth/invalid-email':
-          return (errorSignIn = 'Email is invalid');
+          errorSignIn = 'Email is invalid';
+          break;
 
         case 'auth/user-not-found':
-          return (errorSignIn = 'User not found');
+          errorSignIn = 'User not found';
+          break;
 
         case 'auth/wrong-password':
-          return (errorSignIn = 'Password is incorrect');
+          errorSignIn = 'Password is incorrect';
+          break;
 
         default:
-          return (errorSignIn = 'Error login account, please try again later');
+          errorSignIn = 'Error login account, please try again later';
       }
+      navigate('SignIn');
+      showToast.error({text1: 'Error sign in account', text2: errorSignIn});
     });
 
   return {userSignIn, errorSignIn};

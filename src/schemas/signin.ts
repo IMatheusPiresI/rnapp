@@ -11,7 +11,7 @@ const schemaSignIn = yup.object({
     .required('Password is required')
     .matches(
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-      'Minimum of 8 characters, One uppercase letter, One lowercase letter, One number:',
+      'Min 8 letters, one: uppercase, lowercase, number',
     ),
 });
 

@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, Store} from 'redux';
+import {createStore, applyMiddleware, Store, AnyAction} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import {rootReducer} from './modules/rootReducer';
@@ -19,7 +19,7 @@ export type ApplicationState = {
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
-const store: Store<ApplicationState> = createStore(
+const store: Store<ApplicationState, AnyAction> = createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware),
 );

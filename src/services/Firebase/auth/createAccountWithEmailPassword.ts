@@ -1,39 +1,49 @@
 import auth from '@react-native-firebase/auth';
-
-interface UserCreated {
-  email: string;
-  uid: string;
-}
+import {authActions} from '../../../store/modules/auth/actions';
+import {navigate} from '../../../utils/navigation';
+import {showToast} from '../../../utils/toastMessage';
 
 export const createAccountWithEmailPassword = async (
   email: string,
   password: string,
 ) => {
-  let userCreated = {} as UserCreated;
-  let errorOnCreated = '';
-
   await auth()
     .createUserWithEmailAndPassword(email, password)
     .then(({user}) => {
-      userCreated = {
+      console.log('entrei');
+      authActions.setUser({
         email: user.email!,
         uid: user.uid,
-      };
+      });
+      setTimeout(() => {
+        showToast.success({
+          text1: 'Sucess create account',
+          text2: 'Welcome to RNApp, enjoy the experience',
+        });
+      }, 2000);
+      console.log('entrei');
     })
     .catch(error => {
+      let errorOnCreated: string;
+
       switch (error.code) {
         case 'auth/email-already-in-use':
-          return (errorOnCreated =
-            'The email address is already in use by another account.');
+          errorOnCreated =
+            'The email address is already in use by another account.';
+          break;
 
         case 'auth/invalid-email':
-          return (errorOnCreated = 'This email address is invalid');
+          errorOnCreated = 'This email address is invalid';
+          break;
 
         default:
-          return (errorOnCreated =
-            'Error creating account, please try again later');
+          errorOnCreated = 'Error creating account, please try again later';
       }
-    });
+      navigate('SignUp');
 
-  return {userCreated, errorOnCreated};
+      showToast.error({
+        text1: 'Erro create account',
+        text2: errorOnCreated,
+      });
+    });
 };

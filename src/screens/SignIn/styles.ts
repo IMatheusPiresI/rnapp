@@ -20,7 +20,7 @@ export const Header = styled.View`
 `;
 
 export const WrapperForm = styled.View`
-  margin-top: 30px;
+  margin-top: 15px;
 `;
 
 export const FormTitle = styled.Text`
@@ -32,7 +32,7 @@ export const FormTitle = styled.Text`
 `;
 
 export const BoxInput = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 `;
 
 export const BoxBtnLogin = styled.View``;

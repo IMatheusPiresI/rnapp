@@ -40,7 +40,9 @@ export const BoxIcon = styled.View`
 export const ErrorMessage = styled(Animated.Text)`
   color: ${({theme}) => theme.colors.error};
   font-family: ${({theme}) => theme.fonts.primaryMedium};
-  font-size: 13px;
+  font-size: 10px;
   margin-top: 3px;
   margin-left: 5px;
+  position: absolute;
+  bottom: -20px;
 `;
