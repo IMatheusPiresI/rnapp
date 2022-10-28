@@ -15,7 +15,7 @@ Repositório do projeto **RNApp Login** esse repositório comtempla o projeto RN
 
 ◽ Clonar o repositório ultilizando Git Bash + o comando:
 
-       $ git clone https://github.com/IMatheusPiresI/rnapp.git
+       $ git clone https://github.com/IMatheusPiresI/rnlogin.git
 
 ◽ Acessar a pasta to-ducks-tasks e executar o comando <br>
 
