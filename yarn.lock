@@ -1380,10 +1380,10 @@
   resolved "https://pkgs.dev.azure.com/AzureDevOps-BNE/_packaging/BNE/npm/registry/@react-native-community/eslint-plugin/-/eslint-plugin-1.2.0.tgz#7d6d789ae8edf73dc9bed1246cd48277edea8066"
   integrity sha1-fW14mujt9z3JvtEkbNSCd+3qgGY=
 
-"@react-native-firebase/app@^16.1.1":
-  version "16.1.1"
-  resolved "https://pkgs.dev.azure.com/AzureDevOps-BNE/_packaging/BNE/npm/registry/@react-native-firebase/app/-/app-16.1.1.tgz#4907b2691fc24492e784545d58784b1acf3a3bd5"
-  integrity sha1-SQeyaR/CRJLnhFRdWHhLGs86O9U=
+"@react-native-firebase/app@^16.3.0":
+  version "16.3.0"
+  resolved "https://pkgs.dev.azure.com/AzureDevOps-BNE/_packaging/BNE/npm/registry/@react-native-firebase/app/-/app-16.3.0.tgz#fb8f1f31507660daa418ac49960c05d1d735021f"
+  integrity sha1-+48fMVB2YNqkGKxJlgwF0dc1Ah8=
   dependencies:
     "@expo/config-plugins" "^5.0.1"
     opencollective-postinstall "^2.0.1"
@@ -1393,6 +1393,11 @@
   version "16.1.1"
   resolved "https://pkgs.dev.azure.com/AzureDevOps-BNE/_packaging/BNE/npm/registry/@react-native-firebase/auth/-/auth-16.1.1.tgz#63dd688ba388fabf2c8185d9e723db56703b3fbb"
   integrity sha1-Y91oi6OI+r8sgYXZ5yPbVnA7P7s=
+
+"@react-native-google-signin/google-signin@^8.0.1":
+  version "8.0.1"
+  resolved "https://pkgs.dev.azure.com/AzureDevOps-BNE/_packaging/BNE/npm/registry/@react-native-google-signin/google-signin/-/google-signin-8.0.1.tgz#b03e7fa07013800ec4cff47881e7704a9d8d917f"
+  integrity sha1-sD5/oHATgA7Ez/R4gedwSp2NkX8=
 
 "@react-native-masked-view/masked-view@^0.2.8":
   version "0.2.8"

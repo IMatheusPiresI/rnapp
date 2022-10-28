@@ -32,4 +32,16 @@ export const toastConfig = {
       }}
     />
   ),
+
+  info: (props: BaseToastProps) => (
+    <BaseToast
+      {...props}
+      style={{borderLeftColor: theme.colors.backgroundDark}}
+      contentContainerStyle={{paddingHorizontal: 15}}
+      text1Style={{
+        fontSize: 15,
+        fontWeight: '400',
+      }}
+    />
+  ),
 };

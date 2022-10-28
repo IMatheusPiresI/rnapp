@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import * as S from './styles';
 import {Formik} from 'formik';
 
@@ -11,6 +11,8 @@ import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import {authActions} from '../../store/modules/auth/actions';
 import {showToast} from '../../utils/toastMessage';
+
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const initialValue: ValuesSignIn = {
   email: '',
@@ -39,6 +41,17 @@ export const SignIn: React.FC = () => {
   const handleGoSignUp = () => {
     navigation.navigate('SignUp');
   };
+
+  const handleGoogleSignIn = () => {
+    dispatch(authActions.signInWithGoogle());
+  };
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId:
+        '801540359218-1oq1dqqgbng1e8sdodggp24gh49i14v7.apps.googleusercontent.com',
+    });
+  }, []);
 
   return (
     <S.Container>
@@ -78,7 +91,11 @@ export const SignIn: React.FC = () => {
             </S.BoxBtnLogin>
             <S.LineSpace />
             <S.BoxBtnLogin>
-              <Button title="Login with Google" variant="google" />
+              <Button
+                title="Login with Google"
+                variant="google"
+                onPress={handleGoogleSignIn}
+              />
             </S.BoxBtnLogin>
             <S.WrapperChangeSignUp>
               <S.WrapperText>

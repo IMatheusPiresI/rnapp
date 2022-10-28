@@ -9,6 +9,10 @@ type User = {
   uid: string;
 };
 
+type googleSignInActionPayload = {
+  googleTokenCredential: string;
+};
+
 const signIn = (payload: AuthActionPayload) => {
   return {
     type: authTypes.ASYNC_AUTH_LOGIN,
@@ -20,6 +24,12 @@ const signUp = (payload: AuthActionPayload) => {
   return {
     type: authTypes.ASYNC_AUTH_REGISTER,
     payload,
+  };
+};
+
+const signInWithGoogle = () => {
+  return {
+    type: authTypes.ASYNC_AUTH_LOGIN_WITH_GOOGLE,
   };
 };
 
@@ -44,6 +54,7 @@ const attProgressLoading = (payload: number) => {
 const authActions = {
   signUp,
   signIn,
+  signInWithGoogle,
   setUser,
   attProgressLoading,
 };

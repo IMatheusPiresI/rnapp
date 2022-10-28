@@ -1,5 +1,8 @@
+import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {put, call} from 'redux-saga/effects';
 import {navigate} from '../../../routes/navigation';
+import {getGoogleCredential} from '../../../services/Firebase/auth/Google/getGoogleCredential';
+import {signInWIthGoogleCredential} from '../../../services/Firebase/auth/Google/signInWIthGoogleCredential';
 import {signInWithEmailPassoword} from '../../../services/Firebase/auth/signInWithEmailPassword';
 import {createAccountWithEmailPassword} from './../../../services/Firebase/auth/createAccountWithEmailPassword';
 import {authActions} from './actions';
@@ -59,6 +62,30 @@ export function* authLogin(action: authAction) {
   yield call(signInWithEmailPassoword, userInfo.email, userInfo.password);
 
   yield put(authActions.attProgressLoading(100));
+}
+
+export function* authLogingWithGoogle() {
+  const credential: FirebaseAuthTypes.AuthCredential = yield call(
+    getGoogleCredential,
+  );
+
+  if (credential) {
+    navigate('Loading');
+
+    yield put(authActions.attProgressLoading(25));
+
+    yield call(timeOutTwoSecond);
+
+    yield put(authActions.attProgressLoading(80));
+
+    yield call(timeOutTwoSecond);
+
+    yield put(authActions.attProgressLoading(98));
+
+    yield call(signInWIthGoogleCredential, credential);
+
+    yield put(authActions.attProgressLoading(100));
+  }
 }
 
 export function* authLogout() {}

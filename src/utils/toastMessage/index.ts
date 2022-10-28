@@ -24,4 +24,13 @@ export const showToast = {
       bottomOffset: 80,
     });
   },
+  info: ({text1, text2}: ToastProps) => {
+    return Toast.show({
+      type: 'info',
+      text1,
+      text2,
+      position: 'bottom',
+      bottomOffset: 80,
+    });
+  },
 };
