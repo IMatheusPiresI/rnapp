@@ -63,7 +63,7 @@ export const SignIn: React.FC = () => {
         initialValues={initialValue}
         onSubmit={handleSubmitForm}
         validationSchema={schemaSignIn}>
-        {({handleChange, handleBlur, handleSubmit, values, errors}) => (
+        {({handleChange, handleSubmit, values, errors}) => (
           <S.WrapperForm>
             <S.FormTitle>Sign In</S.FormTitle>
             <S.BoxInput>
