@@ -1,6 +1,6 @@
-# RNApp Login 💭
+# RNApp💭
 
-Repositório do projeto **RNApp Login** esse repositório comtempla o projeto RNApp até a funcionalidade de criação de conta e login, utilizando Firebase para login com email e senha, e também para login social utilizando Google.
+Repositório do projeto **RNApp** esse repositório comtempla o projeto RNApp até a funcionalidade de criação de conta e login, utilizando Firebase para login com email e senha, e também para login social utilizando Google.
 
 <h3 id="preview">🎥 Preview</h3>
 
