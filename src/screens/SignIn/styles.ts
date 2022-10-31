@@ -1,4 +1,3 @@
-import {KeyboardAvoidingView} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
