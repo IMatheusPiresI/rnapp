@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {TabRoutes} from './Tab/TabRoutes';
 
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {AuthRoutes} from './Stack/AuthRoutes';
@@ -9,6 +8,7 @@ import {authActions} from '../store/modules/auth/actions';
 import {useDispatch} from 'react-redux';
 import useAppSelector from '../hooks/useAppSelector';
 import {navigationRef} from './navigation';
+import {StackAppRoutes} from './Stack/StackAppRoutes';
 
 export const AppRoutes = () => {
   const [initializing, setInitializing] = useState(true);
@@ -39,7 +39,7 @@ export const AppRoutes = () => {
 
   const renderRoutes = () => {
     if (user) {
-      return <TabRoutes />;
+      return <StackAppRoutes />;
     }
     return <AuthRoutes />;
   };

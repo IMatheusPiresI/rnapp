@@ -6,4 +6,7 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const Title = styled.Text``;
+export const Title = styled.Text`
+  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-size: 22px;
+`;

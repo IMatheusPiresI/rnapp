@@ -1,6 +1,13 @@
+import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView.attrs({
+export const Container = styled.KeyboardAvoidingView.attrs({
+  behavior: Platform.OS === 'ios' ? 'padding' : undefined,
+})`
+  flex: 1;
+`;
+
+export const ScrollView = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
 })`
   flex: 1;

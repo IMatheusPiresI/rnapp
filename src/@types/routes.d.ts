@@ -6,6 +6,11 @@ export declare global {
       SignUp: undefined;
       Loading: undefined;
       Home: undefined;
+      CodePost: undefined;
+      Search: undefined;
+      Profile: undefined;
+      ProfileStack: undefined;
+      SettingsStack: undefined;
     }
   }
 }
