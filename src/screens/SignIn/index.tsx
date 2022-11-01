@@ -54,60 +54,62 @@ export const SignIn: React.FC = () => {
   }, []);
 
   return (
-    <S.Container>
-      <S.Header>
-        <WelcomeImage title="Welcome to RNApp" />
-      </S.Header>
+    <S.KeyboardScrollView>
+      <S.Container>
+        <S.Header>
+          <WelcomeImage title="Welcome to RNApp" />
+        </S.Header>
 
-      <Formik
-        initialValues={initialValue}
-        onSubmit={handleSubmitForm}
-        validationSchema={schemaSignIn}>
-        {({handleChange, handleSubmit, values, errors}) => (
-          <S.WrapperForm>
-            <S.FormTitle>Sign In</S.FormTitle>
-            <S.BoxInput>
-              <InputText
-                value={values['email']}
-                label={'Email'}
-                onChangeText={handleChange('email')}
-                nameIcon={'mail-outline'}
-                autoCapitalize="none"
-                errors={errors['email']}
-              />
-            </S.BoxInput>
-            <S.BoxInput>
-              <InputText
-                value={values['password']}
-                label={'Password'}
-                onChangeText={handleChange('password')}
-                nameIcon={'lock-outline'}
-                errors={errors['password']}
-                secret
-              />
-            </S.BoxInput>
-            <S.BoxBtnLogin>
-              <Button title="Login" onPress={handleSubmit} />
-            </S.BoxBtnLogin>
-            <S.LineSpace />
-            <S.BoxBtnLogin>
-              <Button
-                title="Login with Google"
-                variant="google"
-                onPress={handleGoogleSignIn}
-              />
-            </S.BoxBtnLogin>
-            <S.WrapperChangeSignUp>
-              <S.WrapperText>
-                <S.TextSingup>Don't have an account?.</S.TextSingup>
-                <S.ButtonGoSignUp onPress={handleGoSignUp}>
-                  <S.LinkSignUp>Create account</S.LinkSignUp>
-                </S.ButtonGoSignUp>
-              </S.WrapperText>
-            </S.WrapperChangeSignUp>
-          </S.WrapperForm>
-        )}
-      </Formik>
-    </S.Container>
+        <Formik
+          initialValues={initialValue}
+          onSubmit={handleSubmitForm}
+          validationSchema={schemaSignIn}>
+          {({handleChange, handleSubmit, values, errors}) => (
+            <S.WrapperForm>
+              <S.FormTitle>Sign In</S.FormTitle>
+              <S.BoxInput>
+                <InputText
+                  value={values['email']}
+                  label={'Email'}
+                  onChangeText={handleChange('email')}
+                  nameIcon={'mail-outline'}
+                  autoCapitalize="none"
+                  errors={errors['email']}
+                />
+              </S.BoxInput>
+              <S.BoxInput>
+                <InputText
+                  value={values['password']}
+                  label={'Password'}
+                  onChangeText={handleChange('password')}
+                  nameIcon={'lock-outline'}
+                  errors={errors['password']}
+                  secret
+                />
+              </S.BoxInput>
+              <S.BoxBtnLogin>
+                <Button title="Login" onPress={handleSubmit} />
+              </S.BoxBtnLogin>
+              <S.LineSpace />
+              <S.BoxBtnLogin>
+                <Button
+                  title="Login with Google"
+                  variant="google"
+                  onPress={handleGoogleSignIn}
+                />
+              </S.BoxBtnLogin>
+              <S.WrapperChangeSignUp>
+                <S.WrapperText>
+                  <S.TextSingup>Don't have an account?.</S.TextSingup>
+                  <S.ButtonGoSignUp onPress={handleGoSignUp}>
+                    <S.LinkSignUp>Create account</S.LinkSignUp>
+                  </S.ButtonGoSignUp>
+                </S.WrapperText>
+              </S.WrapperChangeSignUp>
+            </S.WrapperForm>
+          )}
+        </Formik>
+      </S.Container>
+    </S.KeyboardScrollView>
   );
 };

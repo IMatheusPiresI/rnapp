@@ -1,9 +1,8 @@
-import {ScrollView} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
-export const Container = styled(ScrollView).attrs({
-  showsVerticalScrollIndicator: false,
-})`
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
+export const Container = styled.View`
   flex: 1;
   padding-top: ${({theme}) => theme.metrics.statusBarHeight}px;
   background-color: ${({theme}) => theme.colors.background};
@@ -11,6 +10,11 @@ export const Container = styled(ScrollView).attrs({
   padding-right: 40px;
   padding-bottom: ${({theme}) => theme.metrics.bottomSpaceheight + 20}px;
 `;
+
+export const KeyboardScrollView = styled(KeyboardAwareScrollView).attrs({
+  contentContainerStyle: {flexGrow: 1},
+  showsVerticalScrollIndicator: false,
+})``;
 
 export const Header = styled.View`
   align-items: center;

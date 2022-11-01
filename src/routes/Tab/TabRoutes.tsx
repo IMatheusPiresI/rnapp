@@ -2,8 +2,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home} from '../../screens/Home';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useTheme} from 'styled-components/native';
-import {Dimensions, TouchableOpacity, View} from 'react-native';
+import {Dimensions, Keyboard, TouchableOpacity, View} from 'react-native';
 import Animated, {
+  interpolate,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
@@ -11,18 +12,15 @@ import Animated, {
 import {Search} from '../../screens/Search';
 import {CodePost} from '../../screens/CodePost';
 import {Profile} from '../../screens/Profile';
+import {StackProfile} from '../Stack/StackProfile';
+import {useEffect} from 'react';
 
 const Tab = createBottomTabNavigator();
 
 export const TabRoutes = () => {
   const theme = useTheme();
+  const animatedOpacity = useSharedValue(60);
   const translateX = useSharedValue(35);
-
-  const rSelectedRoute = useAnimatedStyle(() => {
-    return {
-      left: translateX.value,
-    };
-  });
 
   const attAnimatedValue = (position: number) => {
     translateX.value = withTiming(35 + getWidth() * position, {
@@ -30,11 +28,39 @@ export const TabRoutes = () => {
     });
   };
 
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        animatedOpacity.value = withTiming(0, {duration: 200});
+      },
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        animatedOpacity.value = withTiming(1, {duration: 800});
+      },
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
+
+  const rSelectedRoute = useAnimatedStyle(() => {
+    return {
+      left: translateX.value,
+      opacity: animatedOpacity.value,
+    };
+  });
+
   return (
     <>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
+          tabBarHideOnKeyboard: true,
           tabBarStyle: {
             height: 60,
             borderTopLeftRadius: 20,
@@ -132,7 +158,7 @@ export const TabRoutes = () => {
         />
         <Tab.Screen
           name="Profile"
-          component={Profile}
+          component={StackProfile}
           listeners={{
             tabPress: () => attAnimatedValue(4),
           }}
