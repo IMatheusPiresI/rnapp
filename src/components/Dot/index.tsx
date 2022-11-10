@@ -1,6 +1,9 @@
 import React from 'react';
-import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {useTheme} from 'styled-components';
+import Animated, {
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
+import { useTheme } from 'styled-components';
 import * as S from './styles';
 
 interface DotProps {
@@ -8,7 +11,7 @@ interface DotProps {
   index: number;
 }
 
-export const Dot: React.FC<DotProps> = ({activeDot, index}) => {
+export const Dot: React.FC<DotProps> = ({ activeDot, index }) => {
   const theme = useTheme();
   const rDotStyle = useAnimatedStyle(() => {
     const isActive = activeDot.value === index;

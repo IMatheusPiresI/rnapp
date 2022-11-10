@@ -1,4 +1,4 @@
-import {authTypes} from './types';
+import { authTypes } from './types';
 type AuthActionPayload = {
   email: string;
   password: string;
@@ -7,10 +7,6 @@ type AuthActionPayload = {
 type User = {
   email: string;
   uid: string;
-};
-
-type googleSignInActionPayload = {
-  googleTokenCredential: string;
 };
 
 const signIn = (payload: AuthActionPayload) => {
@@ -59,4 +55,4 @@ const authActions = {
   attProgressLoading,
 };
 
-export {authActions};
+export { authActions };

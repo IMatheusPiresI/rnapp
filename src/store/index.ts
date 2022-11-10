@@ -1,7 +1,7 @@
-import {createStore, applyMiddleware, Store, AnyAction} from 'redux';
+import { createStore, applyMiddleware, Store, AnyAction } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import {rootReducer} from './modules/rootReducer';
+import { rootReducer } from './modules/rootReducer';
 
 import rootSaga from './modules/rootSaga';
 
@@ -26,4 +26,4 @@ const store: Store<ApplicationState, AnyAction> = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-export {store};
+export { store };

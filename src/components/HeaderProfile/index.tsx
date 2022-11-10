@@ -1,13 +1,13 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {useTheme} from 'styled-components';
+import { useTheme } from 'styled-components';
 import * as S from './styles';
 
 type Props = {
   edit?: boolean;
 };
 
-export const HeaderProfile: React.FC<Props> = ({edit = false}) => {
+export const HeaderProfile: React.FC<Props> = ({ edit = false }) => {
   const theme = useTheme();
   const navigation = useNavigation();
 

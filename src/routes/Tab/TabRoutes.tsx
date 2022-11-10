@@ -1,19 +1,17 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home} from '../../screens/Home';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Home } from '../../screens/Home';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useTheme} from 'styled-components/native';
-import {Dimensions, Keyboard, TouchableOpacity, View} from 'react-native';
+import { useTheme } from 'styled-components/native';
+import { Dimensions, Keyboard, TouchableOpacity, View } from 'react-native';
 import Animated, {
-  interpolate,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import {Search} from '../../screens/Search';
-import {CodePost} from '../../screens/CodePost';
-import {Profile} from '../../screens/Profile';
-import {StackProfile} from '../Stack/StackProfile';
-import {useEffect} from 'react';
+import { Search } from '../../screens/Search';
+import { CodePost } from '../../screens/CodePost';
+import { StackProfile } from '../Stack/StackProfile';
+import { useEffect } from 'react';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,13 +30,13 @@ export const TabRoutes = () => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
       () => {
-        animatedOpacity.value = withTiming(0, {duration: 200});
+        animatedOpacity.value = withTiming(0, { duration: 200 });
       },
     );
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       () => {
-        animatedOpacity.value = withTiming(1, {duration: 800});
+        animatedOpacity.value = withTiming(1, { duration: 800 });
       },
     );
 
@@ -46,6 +44,7 @@ export const TabRoutes = () => {
       keyboardDidHideListener.remove();
       keyboardDidShowListener.remove();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const rSelectedRoute = useAnimatedStyle(() => {
@@ -73,7 +72,8 @@ export const TabRoutes = () => {
           },
           tabBarShowLabel: false,
           tabBarActiveTintColor: theme.colors.backgroundDark,
-        }}>
+        }}
+      >
         <Tab.Screen
           name="Home"
           component={Home}
@@ -81,7 +81,7 @@ export const TabRoutes = () => {
             tabPress: () => attAnimatedValue(0),
           }}
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <MaterialIcons
                 name="home"
                 size={25}
@@ -99,7 +99,7 @@ export const TabRoutes = () => {
             tabPress: () => attAnimatedValue(1),
           }}
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <MaterialIcons
                 name="code"
                 size={25}
@@ -114,7 +114,7 @@ export const TabRoutes = () => {
           name="Empty"
           component={EmptyScreen}
           options={{
-            tabBarButton: props => (
+            tabBarButton: (props) => (
               <View {...props} onLayout={() => null}>
                 <TouchableOpacity
                   onPress={() => null}
@@ -131,7 +131,8 @@ export const TabRoutes = () => {
                     borderWidth: 2,
                     borderColor: theme.colors.shape,
                     shadowColor: theme.colors.black,
-                  }}>
+                  }}
+                >
                   <MaterialIcons name="add" size={40} color={'#fff'} />
                 </TouchableOpacity>
               </View>
@@ -145,7 +146,7 @@ export const TabRoutes = () => {
             tabPress: () => attAnimatedValue(3),
           }}
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <MaterialIcons
                 name="search"
                 size={25}
@@ -163,7 +164,7 @@ export const TabRoutes = () => {
             tabPress: () => attAnimatedValue(4),
           }}
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <MaterialIcons
                 name="person"
                 size={25}
@@ -186,7 +187,8 @@ export const TabRoutes = () => {
             borderRadius: getWidth(),
             bottom: 75,
           },
-        ]}></Animated.View>
+        ]}
+      />
     </>
   );
 };

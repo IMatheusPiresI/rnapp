@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 import Animated from 'react-native-reanimated';
 
 export const Container = styled.View`
@@ -14,7 +14,7 @@ export const Footer = styled.View`
   width: 100%;
   position: absolute;
   bottom: 0px;
-  padding-bottom: ${({theme}) => theme.metrics.bottomSpaceheight + 30}px;
+  padding-bottom: ${({ theme }) => theme.metrics.bottomSpaceheight + 30}px;
   flex-direction: row;
 `;
 

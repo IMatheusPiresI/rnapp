@@ -7,6 +7,6 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: 22px;
 `;

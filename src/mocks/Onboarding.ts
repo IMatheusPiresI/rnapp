@@ -1,4 +1,4 @@
-import {StepInfo} from '../@types/mocks/StepOnboarding';
+import { StepInfo } from '../@types/mocks/StepOnboarding';
 
 import tec1 from '../assets/images/tec1.png';
 import tec2 from '../assets/images/tec2.png';

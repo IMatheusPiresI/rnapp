@@ -4,13 +4,13 @@ import {
 } from '@react-native-google-signin/google-signin';
 
 import auth from '@react-native-firebase/auth';
-import {showToast} from '../../../../utils/toastMessage';
+import { showToast } from '../../../../utils/toastMessage';
 
 export const getGoogleCredential = async () => {
   try {
     await GoogleSignin.hasPlayServices();
 
-    const {idToken} = await GoogleSignin.signIn();
+    const { idToken } = await GoogleSignin.signIn();
 
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 

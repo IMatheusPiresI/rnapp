@@ -1,13 +1,13 @@
 import React from 'react';
 import * as S from './styles';
 
-import {StepInfo} from '../../@types/mocks/StepOnboarding';
+import { StepInfo } from '../../@types/mocks/StepOnboarding';
 
 interface StepOnboardingProps {
   page: StepInfo;
 }
 
-export const StepOnboarding: React.FC<StepOnboardingProps> = ({page}) => {
+export const StepOnboarding: React.FC<StepOnboardingProps> = ({ page }) => {
   return (
     <S.Container>
       <S.WrapperContent>

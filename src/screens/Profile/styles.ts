@@ -1,4 +1,4 @@
-import {RFValue} from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 import Material from 'react-native-vector-icons/MaterialIcons';
@@ -8,24 +8,24 @@ export const Container = styled.View`
 
   padding-bottom: 75px;
 
-  background-color: ${({theme}) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Title = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: 22px;
 `;
 
 export const InfoContainer = styled.View`
   padding: 0 20px;
   height: ${RFValue(60)}px;
-  background-color: ${({theme}) => theme.colors.shape};
+  background-color: ${({ theme }) => theme.colors.shape};
 
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   border-width: 1px;
-  border-color: ${({theme}) => theme.colors.black20};
+  border-color: ${({ theme }) => theme.colors.black20};
 `;
 
 export const InfoWrapper = styled.View`
@@ -33,16 +33,16 @@ export const InfoWrapper = styled.View`
 `;
 
 export const Info = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryRegular};
+  font-family: ${({ theme }) => theme.fonts.primaryRegular};
   font-size: ${RFValue(16)}px;
-  color: ${({theme}) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black};
   top: 3px;
 `;
 
 export const NameInfo = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryRegular};
+  font-family: ${({ theme }) => theme.fonts.primaryRegular};
   font-size: ${RFValue(13)}px;
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
   bottom: 3px;
 `;
 
@@ -55,7 +55,7 @@ export const LastPostContainer = styled.View``;
 
 export const LastPostWrapper = styled.TouchableOpacity`
   border-width: 1px;
-  border-color: ${({theme}) => theme.colors.shape};
+  border-color: ${({ theme }) => theme.colors.shape};
   border-radius: 10px;
 
   overflow: hidden;
@@ -64,9 +64,9 @@ export const LastPostWrapper = styled.TouchableOpacity`
 `;
 
 export const TitleSection = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: ${RFValue(20)}px;
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
 
   margin: 5px 0;
 `;
@@ -84,20 +84,20 @@ export const LastPostInfoWrapper = styled.View`
 `;
 
 export const TitlePost = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: ${RFValue(20)}px;
-  color: ${({theme}) => theme.colors.black70};
+  color: ${({ theme }) => theme.colors.black70};
 `;
 
 export const DescriptionPost = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: ${RFValue(14)}px;
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
 `;
 
 export const EmptyPostWrapper = styled.View`
   border-width: 1px;
-  border-color: ${({theme}) => theme.colors.shape};
+  border-color: ${({ theme }) => theme.colors.shape};
   border-radius: 10px;
   padding: 10px;
 
@@ -108,9 +108,9 @@ export const EmptyPostWrapper = styled.View`
 export const EmptyPostDescription = styled.Text`
   text-align: center;
 
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: ${RFValue(14)}px;
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
 `;
 
 export const MaterialIcons = styled(Material)``;

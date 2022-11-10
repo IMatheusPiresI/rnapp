@@ -1,11 +1,11 @@
-import {FirebaseAuthTypes} from '@react-native-firebase/auth';
-import {put, call} from 'redux-saga/effects';
-import {navigate} from '../../../routes/navigation';
-import {getGoogleCredential} from '../../../services/Firebase/auth/Google/getGoogleCredential';
-import {signInWIthGoogleCredential} from '../../../services/Firebase/auth/Google/signInWIthGoogleCredential';
-import {signInWithEmailPassoword} from '../../../services/Firebase/auth/signInWithEmailPassword';
-import {createAccountWithEmailPassword} from './../../../services/Firebase/auth/createAccountWithEmailPassword';
-import {authActions} from './actions';
+import { FirebaseAuthTypes } from '@react-native-firebase/auth';
+import { put, call } from 'redux-saga/effects';
+import { navigate } from '../../../routes/navigation';
+import { getGoogleCredential } from '../../../services/Firebase/auth/Google/getGoogleCredential';
+import { signInWIthGoogleCredential } from '../../../services/Firebase/auth/Google/signInWIthGoogleCredential';
+import { signInWithEmailPassoword } from '../../../services/Firebase/auth/signInWithEmailPassword';
+import { createAccountWithEmailPassword } from './../../../services/Firebase/auth/createAccountWithEmailPassword';
+import { authActions } from './actions';
 
 type authAction = {
   type: string;
@@ -91,7 +91,7 @@ export function* authLogingWithGoogle() {
 export function* authLogout() {}
 
 function timeOutTwoSecond() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(12);
     }, 2000);

@@ -1,6 +1,6 @@
-import {showToast} from './../../../utils/toastMessage/index';
+import { showToast } from './../../../utils/toastMessage/index';
 import auth from '@react-native-firebase/auth';
-import {navigate} from '../../../routes/navigation';
+import { navigate } from '../../../routes/navigation';
 
 export const signInWithEmailPassoword = async (
   email: string,
@@ -9,7 +9,7 @@ export const signInWithEmailPassoword = async (
   let errorSignIn: string = '';
   await auth()
     .signInWithEmailAndPassword(email, password)
-    .catch(error => {
+    .catch((error) => {
       switch (error.code) {
         case 'auth/invalid-email':
           errorSignIn = 'Email is invalid';
@@ -27,8 +27,8 @@ export const signInWithEmailPassoword = async (
           errorSignIn = 'Error login account, please try again later';
       }
       navigate('SignIn');
-      showToast.error({text1: 'Error sign in account', text2: errorSignIn});
+      showToast.error({ text1: 'Error sign in account', text2: errorSignIn });
     });
 
-  return {errorSignIn};
+  return { errorSignIn };
 };

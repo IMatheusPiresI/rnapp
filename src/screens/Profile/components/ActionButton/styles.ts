@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import Material from 'react-native-vector-icons/MaterialIcons';
-import {RFValue} from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export const ActionButton = styled.TouchableOpacity`
   flex-direction: row;
@@ -14,7 +14,7 @@ export const ActionButton = styled.TouchableOpacity`
 
   justify-content: space-between;
 
-  background-color: ${({theme}) => theme.colors.shape};
+  background-color: ${({ theme }) => theme.colors.shape};
 `;
 
 export const IconInfoWrapper = styled.View`
@@ -22,12 +22,12 @@ export const IconInfoWrapper = styled.View`
 `;
 
 export const MaterialIcons = styled(Material)`
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
 `;
 
 export const ActionButtonText = styled.Text`
   margin-left: 10px;
-  color: ${({theme}) => theme.colors.black50};
+  color: ${({ theme }) => theme.colors.black50};
   font-size: ${RFValue(15)}px;
-  font-family: ${({theme}) => theme.fonts.primaryRegular};
+  font-family: ${({ theme }) => theme.fonts.primaryRegular};
 `;

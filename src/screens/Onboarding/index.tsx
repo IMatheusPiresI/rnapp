@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import * as S from './styles';
 
-import {FlatList, StatusBar} from 'react-native';
-import {StepOnboarding} from '../../components/StepOnboarding';
+import { FlatList, StatusBar } from 'react-native';
+import { StepOnboarding } from '../../components/StepOnboarding';
 
 import {
   interpolate,
@@ -12,10 +12,10 @@ import {
   useSharedValue,
 } from 'react-native-reanimated';
 import metrics from '../../styles/theme/metrics';
-import {Paginator} from '../../components/Paginator';
-import {page} from '../../mocks/Onboarding';
-import {Button} from '../../components/Button';
-import {useNavigation} from '@react-navigation/native';
+import { Paginator } from '../../components/Paginator';
+import { page } from '../../mocks/Onboarding';
+import { Button } from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 export const Onboarding: React.FC = () => {
   const [disabledStepButton, setDisabledStepButton] = useState<boolean>(false);
@@ -29,7 +29,7 @@ export const Onboarding: React.FC = () => {
   };
 
   const scrollHandler = useAnimatedScrollHandler({
-    onScroll: event => {
+    onScroll: (event) => {
       translateX.value = event.contentOffset.x;
     },
   });
@@ -56,7 +56,7 @@ export const Onboarding: React.FC = () => {
   const nextStep = () => {
     const nextSlide = activeIndex.value + 1;
     const offset = nextSlide * metrics.screenWidth;
-    scrollRef.current?.scrollToOffset({offset: offset});
+    scrollRef.current?.scrollToOffset({ offset: offset });
     disabledButton(nextSlide);
   };
 
@@ -64,7 +64,7 @@ export const Onboarding: React.FC = () => {
     const currentIndex = translateX.value / metrics.screenWidth;
     return {
       transform: [
-        {translateY: interpolate(currentIndex, [0, 1.5, 2], [100, -50, 0])},
+        { translateY: interpolate(currentIndex, [0, 1.5, 2], [100, -50, 0]) },
       ],
       opacity: interpolate(currentIndex, [0, 1.5, 2], [-1, -1, 1]),
     };
@@ -103,8 +103,8 @@ export const Onboarding: React.FC = () => {
         showsHorizontalScrollIndicator={false}
         pagingEnabled
         onScroll={scrollHandler}
-        keyExtractor={item => item.title}
-        renderItem={({item}) => <StepOnboarding page={item} />}
+        keyExtractor={(item) => item.title}
+        renderItem={({ item }) => <StepOnboarding page={item} />}
       />
       <S.Footer>
         <S.BoxButtonStart style={rStartedButtonStyle}>

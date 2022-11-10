@@ -7,7 +7,7 @@ type WelcomeImageProps = {
   title?: string;
 };
 
-export const WelcomeImage: React.FC<WelcomeImageProps> = ({title}) => {
+export const WelcomeImage: React.FC<WelcomeImageProps> = ({ title }) => {
   return (
     <S.WelcomeWrapper>
       <S.ImageHeader source={loginRNImage} resizeMode="contain" />

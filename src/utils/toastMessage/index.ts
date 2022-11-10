@@ -6,7 +6,7 @@ type ToastProps = {
 };
 
 export const showToast = {
-  success: ({text1, text2}: ToastProps) => {
+  success: ({ text1, text2 }: ToastProps) => {
     return Toast.show({
       type: 'success',
       text1,
@@ -15,7 +15,7 @@ export const showToast = {
       bottomOffset: 80,
     });
   },
-  error: ({text1, text2}: ToastProps) => {
+  error: ({ text1, text2 }: ToastProps) => {
     return Toast.show({
       type: 'error',
       text1,
@@ -24,7 +24,7 @@ export const showToast = {
       bottomOffset: 80,
     });
   },
-  info: ({text1, text2}: ToastProps) => {
+  info: ({ text1, text2 }: ToastProps) => {
     return Toast.show({
       type: 'info',
       text1,

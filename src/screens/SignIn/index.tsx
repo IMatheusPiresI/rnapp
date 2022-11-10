@@ -1,18 +1,18 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import * as S from './styles';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 
-import {WelcomeImage} from '../../components/WelcomeImage';
-import {InputText} from '../../components/Forms/InputText';
-import {ValuesSignIn} from '../../@types/components/Forms/sign';
-import {schemaSignIn} from '../../schemas/signin';
-import {Button} from '../../components/Button';
-import {useNavigation} from '@react-navigation/native';
-import {useDispatch} from 'react-redux';
-import {authActions} from '../../store/modules/auth/actions';
-import {showToast} from '../../utils/toastMessage';
+import { WelcomeImage } from '../../components/WelcomeImage';
+import { InputText } from '../../components/Forms/InputText';
+import { ValuesSignIn } from '../../@types/components/Forms/sign';
+import { schemaSignIn } from '../../schemas/signin';
+import { Button } from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/modules/auth/actions';
+import { showToast } from '../../utils/toastMessage';
 
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const initialValue: ValuesSignIn = {
   email: '',
@@ -63,27 +63,28 @@ export const SignIn: React.FC = () => {
         <Formik
           initialValues={initialValue}
           onSubmit={handleSubmitForm}
-          validationSchema={schemaSignIn}>
-          {({handleChange, handleSubmit, values, errors}) => (
+          validationSchema={schemaSignIn}
+        >
+          {({ handleChange, handleSubmit, values, errors }) => (
             <S.WrapperForm>
               <S.FormTitle>Sign In</S.FormTitle>
               <S.BoxInput>
                 <InputText
-                  value={values['email']}
+                  value={values.email}
                   label={'Email'}
                   onChangeText={handleChange('email')}
                   nameIcon={'mail-outline'}
                   autoCapitalize="none"
-                  errors={errors['email']}
+                  errors={errors.email}
                 />
               </S.BoxInput>
               <S.BoxInput>
                 <InputText
-                  value={values['password']}
+                  value={values.password}
                   label={'Password'}
                   onChangeText={handleChange('password')}
                   nameIcon={'lock-outline'}
-                  errors={errors['password']}
+                  errors={errors.password}
                   secret
                 />
               </S.BoxInput>

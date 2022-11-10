@@ -1,9 +1,9 @@
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import React from 'react';
-import {Button} from '../../components/Button';
-import {InputText} from '../../components/Forms/InputText';
-import {HeaderProfile} from '../../components/HeaderProfile';
-import {schemaEditProfile} from '../../schemas/editProfile';
+import { Button } from '../../components/Button';
+import { InputText } from '../../components/Forms/InputText';
+import { HeaderProfile } from '../../components/HeaderProfile';
+import { schemaEditProfile } from '../../schemas/editProfile';
 import * as S from './styles';
 
 export const Settings: React.FC = () => {
@@ -15,9 +15,10 @@ export const Settings: React.FC = () => {
         <HeaderProfile edit />
         <Formik
           validationSchema={schemaEditProfile}
-          initialValues={{name: ''}}
-          onSubmit={handleConfirmChangeProfile}>
-          {({handleChange, handleBlur, handleSubmit, values, errors}) => (
+          initialValues={{ name: '' }}
+          onSubmit={handleConfirmChangeProfile}
+        >
+          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
             <>
               <S.InputsChangeContainer>
                 <S.InputsWrapper>
@@ -30,9 +31,9 @@ export const Settings: React.FC = () => {
                     <InputText
                       onChangeText={handleChange('name')}
                       onBlur={handleBlur('name')}
-                      value={values['name']}
+                      value={values.name}
                       label={'Name'}
-                      errors={errors['name']}
+                      errors={errors.name}
                     />
                   </S.BoxInput>
                 </S.InputsWrapper>

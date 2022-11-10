@@ -3,4 +3,4 @@ interface ValuesSignIn {
   password: string;
 }
 
-export type {ValuesSignIn};
+export type { ValuesSignIn };

@@ -1,7 +1,10 @@
-import {Dimensions, Platform} from 'react-native';
-import {getStatusBarHeight, getBottomSpace} from 'react-native-iphone-x-helper';
+import { Dimensions, Platform } from 'react-native';
+import {
+  getStatusBarHeight,
+  getBottomSpace,
+} from 'react-native-iphone-x-helper';
 
-const {width: PAGE_WIDTH, height: PAGE_HEIGHT} = Dimensions.get('window');
+const { width: PAGE_WIDTH, height: PAGE_HEIGHT } = Dimensions.get('window');
 
 export default {
   screenWidth: PAGE_WIDTH,

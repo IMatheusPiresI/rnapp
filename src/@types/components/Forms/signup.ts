@@ -5,4 +5,4 @@ interface ValuesSignUp {
   confirmPassword: string;
 }
 
-export type {ValuesSignUp};
+export type { ValuesSignUp };
