@@ -11,8 +11,8 @@ export const ImageHeader = styled.Image`
 
 export const WelcomeToRN = styled.View`
   border-width: 1px;
-  border-color: ${({theme}) => theme.colors.backgroundDark};
-  background-color: ${({theme}) => theme.colors.backgroundDark};
+  border-color: ${({ theme }) => theme.colors.backgroundDark};
+  background-color: ${({ theme }) => theme.colors.backgroundDark};
 
   border-radius: 20px;
   padding: 5px 20px;
@@ -22,7 +22,7 @@ export const WelcomeToRN = styled.View`
 `;
 
 export const WelcomeTitle = styled.Text`
-  font-family: ${({theme}) => theme.fonts.primaryBold};
+  font-family: ${({ theme }) => theme.fonts.primaryBold};
   font-size: 16px;
-  color: ${({theme}) => theme.colors.shape};
+  color: ${({ theme }) => theme.colors.shape};
 `;

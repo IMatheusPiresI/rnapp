@@ -1,8 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {HeaderProfile} from '../../components/HeaderProfile';
-import {ActionButton} from './components/ActionButton';
+import { StatusBar } from 'react-native';
+import { HeaderProfile } from '../../components/HeaderProfile';
+import { ActionButton } from './components/ActionButton';
 import * as S from './styles';
 
 export const Profile: React.FC = () => {

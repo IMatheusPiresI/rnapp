@@ -24,4 +24,4 @@ const schemaSignUp = yup.object({
     .oneOf([yup.ref('password')], 'Your passwords do not match'),
 });
 
-export {schemaSignUp};
+export { schemaSignUp };

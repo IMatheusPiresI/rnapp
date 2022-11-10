@@ -1,6 +1,6 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import * as S from './styles';
-import {TextInputMask, TextInputMaskProps} from 'react-native-masked-text';
+import { TextInputMask, TextInputMaskProps } from 'react-native-masked-text';
 import {
   interpolate,
   useAnimatedStyle,
@@ -11,14 +11,9 @@ import {
 interface InputTextProps extends TextInputMaskProps {
   value: string;
   label: string;
-  masked?: boolean;
 }
 
-export const InputTextMask: React.FC<InputTextProps> = ({
-  label,
-  masked = false,
-  ...rest
-}) => {
+export const InputTextMask: React.FC<InputTextProps> = ({ label, ...rest }) => {
   const inputMaskRef = useRef<TextInputMask>(null);
   const labelAnimate = useSharedValue(0);
 
@@ -37,8 +32,8 @@ export const InputTextMask: React.FC<InputTextProps> = ({
   const rLabelStyle = useAnimatedStyle(() => {
     return {
       transform: [
-        {translateY: labelAnimate.value},
-        {translateX: interpolate(labelAnimate.value, [0, -17], [0, -5])},
+        { translateY: labelAnimate.value },
+        { translateX: interpolate(labelAnimate.value, [0, -17], [0, -5]) },
       ],
       fontSize: interpolate(labelAnimate.value, [0, -17], [12, 9]),
     };

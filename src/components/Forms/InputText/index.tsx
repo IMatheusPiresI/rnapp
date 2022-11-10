@@ -1,6 +1,6 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import * as S from './styles';
-import {TextInput, TextInputProps} from 'react-native';
+import { TextInput, TextInputProps } from 'react-native';
 import {
   interpolate,
   useAnimatedStyle,
@@ -8,7 +8,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useTheme} from 'styled-components';
+import { useTheme } from 'styled-components';
 
 interface InputTextProps extends TextInputProps {
   value: string;
@@ -54,8 +54,8 @@ export const InputText: React.FC<InputTextProps> = ({
   const rLabelStyle = useAnimatedStyle(() => {
     return {
       transform: [
-        {translateY: labelAnimate.value},
-        {translateX: interpolate(labelAnimate.value, [0, -17], [0, -5])},
+        { translateY: labelAnimate.value },
+        { translateX: interpolate(labelAnimate.value, [0, -17], [0, -5]) },
       ],
       fontSize: interpolate(labelAnimate.value, [0, -17], [12, 9]),
     };

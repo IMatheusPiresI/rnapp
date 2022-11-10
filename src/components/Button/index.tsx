@@ -1,18 +1,16 @@
 import React from 'react';
 import * as S from './styles';
-import {StyleSheet, TouchableOpacityProps} from 'react-native';
+import { StyleSheet, TouchableOpacityProps } from 'react-native';
 import googleImage from '../../assets/images/google.png';
 
 type ButtonProps = {
   title: string;
   variant?: 'google' | null;
-  color?: string;
 } & TouchableOpacityProps;
 
 export const Button: React.FC<ButtonProps> = ({
   title,
   variant = null,
-  color,
   ...rest
 }) => {
   return (

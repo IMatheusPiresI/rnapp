@@ -1,13 +1,13 @@
 import React from 'react';
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 import * as S from './styles';
 
-import {logout} from '../../services/Firebase/auth/logout';
+import { logout } from '../../services/Firebase/auth/logout';
 
 import LottieView from 'lottie-react-native';
 
 export const Home: React.FC = () => {
-  const {width} = Dimensions.get('window');
+  const { width } = Dimensions.get('window');
   const handleLogout = async () => {
     await logout();
   };

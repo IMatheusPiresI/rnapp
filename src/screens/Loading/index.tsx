@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
 import * as S from './styles';
 
 import {
@@ -10,7 +11,7 @@ import useAppSelector from '../../hooks/useAppSelector';
 
 export const Loading: React.FC = () => {
   const progressAnimation = useSharedValue(0);
-  const progress = useAppSelector(state => state.authReducer.progressLoading);
+  const progress = useAppSelector((state) => state.authReducer.progressLoading);
 
   const rProgressStyle = useAnimatedStyle(() => {
     return {

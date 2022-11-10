@@ -5,7 +5,7 @@ interface VariantGoogle {
 }
 
 export const Container = styled.TouchableOpacity<VariantGoogle>`
-  background-color: ${({theme, variant}) =>
+  background-color: ${({ theme, variant }) =>
     variant ? theme.colors.shape : theme.colors.backgroundDark};
   border-radius: 20px;
   align-items: center;
@@ -16,9 +16,9 @@ export const Container = styled.TouchableOpacity<VariantGoogle>`
 `;
 
 export const TitleButton = styled.Text<VariantGoogle>`
-  font-family: ${({theme}) => theme.fonts.primaryMedium};
+  font-family: ${({ theme }) => theme.fonts.primaryMedium};
   font-size: 13px;
-  color: ${({theme, variant}) =>
+  color: ${({ theme, variant }) =>
     variant ? theme.colors.black : theme.colors.shape};
 `;
 

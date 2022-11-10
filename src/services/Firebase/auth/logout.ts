@@ -1,4 +1,4 @@
-import {showToast} from './../../../utils/toastMessage/index';
+import { showToast } from './../../../utils/toastMessage/index';
 import auth from '@react-native-firebase/auth';
 
 export const logout = async () => {

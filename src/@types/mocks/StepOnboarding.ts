@@ -1,4 +1,4 @@
-import {ImageSourcePropType} from 'react-native';
+import { ImageSourcePropType } from 'react-native';
 
 interface StepInfo {
   title: string;
@@ -6,4 +6,4 @@ interface StepInfo {
   image: ImageSourcePropType | undefined;
 }
 
-export type {StepInfo};
+export type { StepInfo };

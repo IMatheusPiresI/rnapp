@@ -15,4 +15,4 @@ const schemaSignIn = yup.object({
     ),
 });
 
-export {schemaSignIn};
+export { schemaSignIn };

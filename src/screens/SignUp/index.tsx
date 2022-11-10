@@ -1,21 +1,20 @@
 import React from 'react';
 import * as S from './styles';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 
-import {WelcomeImage} from '../../components/WelcomeImage';
-import {InputText} from '../../components/Forms/InputText';
-import {Button} from '../../components/Button';
+import { WelcomeImage } from '../../components/WelcomeImage';
+import { InputText } from '../../components/Forms/InputText';
+import { Button } from '../../components/Button';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import {useNavigation} from '@react-navigation/native';
-import {useTheme} from 'styled-components';
-import {schemaSignUp} from '../../schemas/signup';
-import {ValuesSignUp} from '../../@types/components/Forms/signup';
+import { useNavigation } from '@react-navigation/native';
+import { useTheme } from 'styled-components';
+import { schemaSignUp } from '../../schemas/signup';
+import { ValuesSignUp } from '../../@types/components/Forms/signup';
 
-import {useDispatch} from 'react-redux';
-import {authActions} from '../../store/modules/auth/actions';
-import {showToast} from '../../utils/toastMessage';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/modules/auth/actions';
+import { showToast } from '../../utils/toastMessage';
 
 const initialValue: ValuesSignUp = {
   fullName: '',
@@ -65,48 +64,49 @@ export const SignUp: React.FC = () => {
         <Formik
           initialValues={initialValue}
           onSubmit={handleSignUp}
-          validationSchema={schemaSignUp}>
-          {({handleChange, handleBlur, handleSubmit, values, errors}) => (
+          validationSchema={schemaSignUp}
+        >
+          {({ handleChange, handleSubmit, values, errors }) => (
             <>
               <S.WrapperForm>
                 <S.FormTitle>Sign Up</S.FormTitle>
                 <S.BoxInput>
                   <InputText
-                    value={values['fullName']}
+                    value={values.fullName}
                     label={'Full Name'}
                     onChangeText={handleChange('fullName')}
                     autoCapitalize="none"
-                    errors={errors['fullName']}
+                    errors={errors.fullName}
                   />
                 </S.BoxInput>
 
                 <S.BoxInput>
                   <InputText
-                    value={values['email']}
+                    value={values.email}
                     label={'Email'}
                     onChangeText={handleChange('email')}
                     nameIcon={'mail-outline'}
                     autoCapitalize="none"
-                    errors={errors['email']}
+                    errors={errors.email}
                   />
                 </S.BoxInput>
                 <S.BoxInput>
                   <InputText
-                    value={values['password']}
+                    value={values.password}
                     label={'Password'}
                     onChangeText={handleChange('password')}
                     nameIcon={'lock-outline'}
-                    errors={errors['password']}
+                    errors={errors.password}
                     secret
                   />
                 </S.BoxInput>
                 <S.BoxInput>
                   <InputText
-                    value={values['confirmPassword']}
+                    value={values.confirmPassword}
                     label={'Confirm Password'}
                     onChangeText={handleChange('confirmPassword')}
                     nameIcon={'lock-outline'}
-                    errors={errors['confirmPassword']}
+                    errors={errors.confirmPassword}
                     secret
                   />
                 </S.BoxInput>

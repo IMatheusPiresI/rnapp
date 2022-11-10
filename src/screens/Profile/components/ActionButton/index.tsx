@@ -1,14 +1,14 @@
 import React from 'react';
 import * as S from './styles';
 
-import {TouchableOpacityProps} from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 
 type Props = {
   iconName: string;
   name: string;
 } & TouchableOpacityProps;
 
-export const ActionButton: React.FC<Props> = ({iconName, name, ...rest}) => {
+export const ActionButton: React.FC<Props> = ({ iconName, name, ...rest }) => {
   return (
     <S.ActionButton {...rest}>
       <S.IconInfoWrapper>

@@ -1,4 +1,5 @@
-import {NavigationContainerRef} from '@react-navigation/native';
+/* eslint-disable no-undef */
+import { NavigationContainerRef } from '@react-navigation/native';
 import React from 'react';
 
 export const navigationRef =

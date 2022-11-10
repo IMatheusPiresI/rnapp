@@ -2,10 +2,10 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
-import {TransitionSpec} from '@react-navigation/stack/lib/typescript/src/types';
-import {Easing} from 'react-native';
-import {Settings} from '../../screens/Settings';
-import {TabRoutes} from '../Tab/TabRoutes';
+import { TransitionSpec } from '@react-navigation/stack/lib/typescript/src/types';
+import { Easing } from 'react-native';
+import { Settings } from '../../screens/Settings';
+import { TabRoutes } from '../Tab/TabRoutes';
 
 const Stack = createStackNavigator();
 
@@ -42,7 +42,8 @@ export const StackAppRoutes = () => {
           close: configStackAnimation.close,
         },
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-      }}>
+      }}
+    >
       <Stack.Screen name="HomeStack" component={TabRoutes} />
       <Stack.Screen name="SettingsStack" component={Settings} />
     </Stack.Navigator>
