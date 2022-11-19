@@ -17,11 +17,11 @@ Repositório do projeto **RNApp** esse repositório comtempla o projeto RNApp at
 
        $ git clone https://github.com/IMatheusPiresI/rnlogin.git
 
-◽ Acessar a pasta to-ducks-tasks e executar o comando <br>
+◽ Instalar as dependências utilizando o comando: <br>
 
         $ yarn
 
-◽ Após a instalação das dependências, rodar o comando  <br>
+◽ Após a instalação das dependências, rodar o comando:  <br>
 
         $ yarn run android
 
